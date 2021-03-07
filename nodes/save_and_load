@@ -28,14 +28,14 @@ class JointDataSave():
             self.settings = termios.tcgetattr(sys.stdin)
 
         self.planning_group = rospy.get_param("~planning_group")
-        # self.open_manipulator_joint_states_sub_ = rospy.Subscriber('/open_manipulator/joint_states', JointState, self.jointStatesCallback)
-        # self.set_actuator_state = rospy.ServiceProxy('/open_manipulator/set_actuator_state', SetActuatorState)
-        # self.set_joint_position = rospy.ServiceProxy('/open_manipulator/goal_joint_space_path', SetJointPosition)
-        # self.set_gripper_position = rospy.ServiceProxy('/open_manipulator/goal_tool_control', SetJointPosition)
-        self.open_manipulator_joint_states_sub_ = rospy.Subscriber('/joint_states', JointState, self.jointStatesCallback)
-        self.set_actuator_state = rospy.ServiceProxy('/set_actuator_state', SetActuatorState)
-        self.set_joint_position = rospy.ServiceProxy('/goal_joint_space_path', SetJointPosition)
-        self.set_gripper_position = rospy.ServiceProxy('/goal_tool_control', SetJointPosition)    
+        self.open_manipulator_joint_states_sub_ = rospy.Subscriber('/open_manipulator/joint_states', JointState, self.jointStatesCallback)
+        self.set_actuator_state = rospy.ServiceProxy('/open_manipulator/set_actuator_state', SetActuatorState)
+        self.set_joint_position = rospy.ServiceProxy('/open_manipulator/goal_joint_space_path', SetJointPosition)
+        self.set_gripper_position = rospy.ServiceProxy('/open_manipulator/goal_tool_control', SetJointPosition)
+#         self.open_manipulator_joint_states_sub_ = rospy.Subscriber('/joint_states', JointState, self.jointStatesCallback)
+#         self.set_actuator_state = rospy.ServiceProxy('/set_actuator_state', SetActuatorState)
+#         self.set_joint_position = rospy.ServiceProxy('/goal_joint_space_path', SetJointPosition)
+#         self.set_gripper_position = rospy.ServiceProxy('/goal_tool_control', SetJointPosition)    
         self.jointStates = [0.0, 0.0, 0.0, 0.0, 0.0]
         self.state = 0
         self.count = 0
